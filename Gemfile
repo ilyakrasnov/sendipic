@@ -41,7 +41,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails'
   gem 'capybara'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
