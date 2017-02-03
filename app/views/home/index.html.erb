@@ -2,13 +2,19 @@
 <section class="header">
   <h2 class="title">Sendipic - The Ultimate Pic Finder</h2>
 </section>
-<form>
+
+<%= form_tag(search_path, remote: true) do %>
   <div class="row">
     <div class="six columns">
-      <input class="u-full-width" type="text" placeholder="search pictures..." id="exampleEmailInput">
-    </div><div class="one column">
-      <input class="button-primary" type="submit" value="Search">
+      <%= text_field_tag :search, params[:query],
+        class: 'u-full-width',
+        placeholder: 'search pictures...'
+      %>
+    </div>
+    <div class="one column">
+      <%= submit_tag "Search", :name => nil, class: 'button-primary' %>
     </div>
   </div>
-</form>
-</div>
+<% end %>
+
+<div id="search-results"></div>
